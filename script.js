@@ -1,10 +1,8 @@
 "strict mode";
 
 const selection = ["rock", "paper", "scissors"];
-function getComputerChoice() {
-  let choice = Math.floor(Math.random() * selection.length);
-  return selection[choice];
-}
+const getComputerChoice = () =>
+  selection[Math.floor(Math.random() * selection.length)];
 
 const playRound = function (playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() === computerSelection) {
