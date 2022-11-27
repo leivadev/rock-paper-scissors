@@ -7,15 +7,51 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection.toLowerCase() === "rock") {
-    console.log("You selected rock");
+  if (playerSelection.toLowerCase() === computerSelection) {
+    console.log("Draw!");
   } else if (playerSelection.toLowerCase() === "paper") {
     console.log("You selected paper");
+    switch (computerSelection) {
+      case "rock":
+        console.log("Computer: rock");
+        break;
+      case "paper":
+        console.log("Computer: paper");
+        break;
+      case "scissors":
+        console.log("Computer: scissors");
+        break;
+    }
   } else if (playerSelection.toLowerCase() === "scissors") {
     console.log("You selected scissors");
+    switch (computerSelection) {
+      case "rock":
+        console.log("Computer: rock");
+        break;
+      case "paper":
+        console.log("Computer: paper");
+        break;
+      case "scissors":
+        console.log("Computer: scissors");
+        break;
+    }
+  } else if (playerSelection.toLowerCase() === "rock") {
+    console.log("You selected rock");
+    switch (computerSelection) {
+      case "rock":
+        console.log("Computer: rock");
+        break;
+      case "paper":
+        console.log("Computer: paper");
+        break;
+      case "scissors":
+        console.log("Computer: scissors");
+        break;
+    }
   }
-  console.log(computerSelection);
 }
 
 const playerSelection = String(prompt("Select rock paper or scissors:"));
 const computerSelection = getComputerChoice();
+
+playRound(playerSelection, computerSelection);
