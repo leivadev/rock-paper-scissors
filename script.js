@@ -53,3 +53,5 @@ function game() {
     `Player points: ${playerPoints} \nComputer points: ${computerPoints}`
   );
 }
+
+game();
