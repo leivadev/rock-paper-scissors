@@ -10,6 +10,7 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() === computerSelection) {
     return `Draw! Both selected ${computerSelection}.`;
   } else if (playerSelection.toLowerCase() === "paper") {
+    console.log("You selected paper");
     switch (computerSelection) {
       case "rock":
         return `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}`;
