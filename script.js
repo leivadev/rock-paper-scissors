@@ -6,7 +6,7 @@ function getComputerChoice() {
   return selection[choice];
 }
 
-function playRound(playerSelection, computerSelection) {
+const playRound = function (playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() === computerSelection) {
     return `Draw! Both selected ${computerSelection}.`;
   } else if (playerSelection.toLowerCase() === "paper") {
@@ -34,9 +34,24 @@ function playRound(playerSelection, computerSelection) {
         return `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}`;
     }
   }
+};
+
+function game() {
+  let playerPoints = 0;
+  let computerPoints = 0;
+  let singleGame;
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = String(prompt("Select rock paper or scissors:"));
+    const computerSelection = getComputerChoice();
+    singleGame = playRound(playerSelection, computerSelection);
+    if (singleGame.includes("win")) {
+      playerPoints++;
+    } else if (singleGame.includes("lose")) {
+      computerPoints++;
+    }
+    console.log(singleGame, "\n-----------");
+  }
+  console.log(
+    `Player points: ${playerPoints} \nComputer points: ${computerPoints}`
+  );
 }
-
-const playerSelection = String(prompt("Select rock paper or scissors:"));
-const computerSelection = getComputerChoice();
-
-console.log(playRound(playerSelection, computerSelection));
