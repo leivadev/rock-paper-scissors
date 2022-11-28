@@ -42,6 +42,7 @@ function game() {
   for (let i = 0; i < rounds; i++) {
     const playerSelection = String(prompt("Select rock paper or scissors:"));
     const computerSelection = getComputerChoice();
+    console.log(`Round ${i + 1}`);
     singleGame = playRound(playerSelection, computerSelection);
     if (singleGame.includes("win")) {
       playerPoints++;
