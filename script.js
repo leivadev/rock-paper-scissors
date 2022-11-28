@@ -44,6 +44,7 @@ function game() {
   let playerPoints = 0;
   let computerPoints = 0;
   let singleGame;
+  let finalAnnouncement;
   const rounds = Number(prompt("Write the rounds you want to play:"));
   for (let i = 0; i < rounds; i++) {
     const playerSelection = String(prompt("Select rock paper or scissors:"));
@@ -57,8 +58,16 @@ function game() {
     }
     console.log(singleGame, "\n-----------");
   }
+  if (playerPoints === computerPoints) {
+    finalAnnouncement = "It's a tie!";
+  } else if (playerPoints > computerPoints) {
+    finalAnnouncement = "You win the game!";
+  } else if (computerPoints > playerPoints) {
+    finalAnnouncement = "Computer win the game!";
+  }
   console.log(
-    `Player points: ${playerPoints} \nComputer points: ${computerPoints}`
+    finalAnnouncement,
+    `\nPlayer points: ${playerPoints} \nComputer points: ${computerPoints}`
   );
 }
 
