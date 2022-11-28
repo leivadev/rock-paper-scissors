@@ -11,24 +11,30 @@ const playRound = function (playerSelection, computerSelection) {
     console.log("You selected paper");
     switch (computerSelection) {
       case "rock":
+        console.log("Computer selected rock");
         return `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}`;
       case "scissors":
+        console.log("Computer selected scissors");
         return `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}`;
     }
   } else if (playerSelection.toLowerCase() === "scissors") {
     console.log("You selected scissors");
     switch (computerSelection) {
       case "rock":
+        console.log("Computer selected rock");
         return `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}`;
       case "paper":
+        console.log("Computer selected paper");
         return `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}`;
     }
   } else if (playerSelection.toLowerCase() === "rock") {
     console.log("You selected rock");
     switch (computerSelection) {
       case "paper":
+        console.log("Computer selected paper");
         return `You win! ${playerSelection.toLowerCase()} beats ${computerSelection}`;
       case "scissors":
+        console.log("Computer selected scissors");
         return `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}`;
     }
   }
