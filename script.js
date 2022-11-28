@@ -38,7 +38,8 @@ function game() {
   let playerPoints = 0;
   let computerPoints = 0;
   let singleGame;
-  for (let i = 0; i < 5; i++) {
+  const rounds = Number(prompt("Write the rounds you want to play:"));
+  for (let i = 0; i < rounds; i++) {
     const playerSelection = String(prompt("Select rock paper or scissors:"));
     const computerSelection = getComputerChoice();
     singleGame = playRound(playerSelection, computerSelection);
