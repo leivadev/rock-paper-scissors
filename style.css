@@ -1,1 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800;900&display=swap');
 
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  background-color: #D9D9D9;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.title {
+  color: #000000;
+  font-size: 64px;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.50);
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background-image: url("media/img/background-crumpled-paper.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content,
+.icons {
+  height: 100%;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 64px;
+  margin: 0 24px;
+}
+
+.icons>button {
+  display: block;
+  max-height: 9rem;
+  max-width: 9rem;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+button>img {
+  max-height: 8rem;
+  max-width: 8rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.information {
+  width: 100%;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.text {
+  font-size: 48px;
+  color: rgb(100, 100, 0);
+}
+
+.name {
+  width: 150px;
+  text-align: center;
+}
+
+.count {
+  flex: 1;
+}
+
+.count>h4,
+.count>h2 {
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h4 {
+  font-size: 32px;
+  font-weight: 500;
+}
