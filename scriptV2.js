@@ -1,4 +1,4 @@
-"strict mode";
+'use strict';
 
 let playerSelection;
 const playerChoices = document.querySelectorAll('.icons-player img');
@@ -8,8 +8,8 @@ const getComputerChoice = () => selection[Math.floor(Math.random() * selection.l
 
 const playRound = function () {
     for (let i = 0; i < playerChoices.length; i++) {
-        const election = playerChoices[i];
-        election.addEventListener('click', function () {
+        const choice = playerChoices[i];
+        choice.addEventListener('click', function () {
             switch (i) {
                 case 0:
                     playerSelection = 'rock';
@@ -21,37 +21,35 @@ const playRound = function () {
                     playerSelection = 'scissors';
                     break;
             }
-            if (playerSelection === getComputerChoice()) {
-                return `Draw! Both selected ${getComputerChoice()}.`;
+            let computerSelection = getComputerChoice();
+            if (playerSelection === computerSelection) {
+                paragraphText.textContent = `Draw! Both selected ${computerSelection}.`;
             } else if (playerSelection === "paper") {
-                console.log("You selected paper");
-                switch (getComputerChoice()) {
+                switch (computerSelection) {
                     case "rock":
-                        console.log("Computer selected rock");
-                        paragraphText.textContent = `You win! ${playerSelection} beats ${getComputerChoice()}`;
+                        paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+                        break;
                     case "scissors":
-                        console.log("Computer selected scissors");
-                        paragraphText.textContent = `You lose! ${getComputerChoice()} beats ${playerSelection}`;
+                        paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+                        break;
                 }
             } else if (playerSelection === "scissors") {
-                console.log("You selected scissors");
-                switch (getComputerChoice()) {
+                switch (computerSelection) {
                     case "rock":
-                        console.log("Computer selected rock");
-                        paragraphText.textContent = `You lose! ${getComputerChoice()} beats ${playerSelection}`;
+                        paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+                        break;
                     case "paper":
-                        console.log("Computer selected paper");
-                        paragraphText.textContent = `You win! ${playerSelection} beats ${getComputerChoice()}`;
+                        paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+                        break;
                 }
             } else if (playerSelection === "rock") {
-                console.log("You selected rock");
-                switch (getComputerChoice) {
+                switch (computerSelection) {
                     case "paper":
-                        console.log("Computer selected paper");
-                        paragraphText.textContent = `You win! ${playerSelection} beats ${getComputerChoice()}`;
+                        paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+                        break;
                     case "scissors":
-                        console.log("Computer selected scissors");
-                        paragraphText.textContent = `You lose! ${getComputerChoice()} beats ${playerSelection}`;
+                        paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+                        break;
                 }
             }
         });
