@@ -64,4 +64,14 @@ const game = function () {
     })
 }
 
+document.querySelector('.again').addEventListener('click', function () {
+    playerPoints = 0;
+    computerPoints = 0;
+    playerResult.src = rock_div.src
+    computerResult.src = document.getElementById("AI-rock").src
+    userScore.innerHTML = playerPoints;
+    computerScore.innerHTML = computerPoints;
+    paragraphText.textContent = 'Pick a Choice!';
+});
+
 game();
