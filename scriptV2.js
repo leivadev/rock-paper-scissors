@@ -15,16 +15,18 @@ const getComputerChoice = () => {
     return selection[randomNumber];
 }
 
-const win = function () {
+const win = function (playerSelection, computerSelection) {
     playerPoints++;
     userScore.innerHTML = playerPoints;
     computerScore.innerHTML = computerPoints;
+    return paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`
 }
 
-const lose = function () {
+const lose = function (playerSelection, computerSelection) {
     computerPoints++;
     userScore.innerHTML = playerPoints;
     computerScore.innerHTML = computerPoints;
+    return paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
 }
 
 const playRound = function (playerSelection) {
@@ -38,29 +40,23 @@ const playRound = function (playerSelection) {
     } else if (playerSelection === "paper") {
         switch (computerSelection) {
             case "rock":
-                win();
-                return paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+                return win(playerSelection, computerSelection);
             case "scissors":
-                lose();
-                return paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+                return lose(playerSelection, computerSelection);
         }
     } else if (playerSelection === "scissors") {
         switch (computerSelection) {
             case "rock":
-                lose();
-                return paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+                return lose(playerSelection, computerSelection);
             case "paper":
-                win();
-                return paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+                return win(playerSelection, computerSelection);
         }
     } else if (playerSelection === "rock") {
         switch (computerSelection) {
             case "paper":
-                win();
-                return paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+                return win(playerSelection, computerSelection);
             case "scissors":
-                lose();
-                return paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+                return lose(playerSelection, computerSelection);
         }
     }
 }
