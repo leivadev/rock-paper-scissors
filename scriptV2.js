@@ -38,26 +38,11 @@ const playRound = function (playerSelection) {
     if (playerSelection === computerSelection) {
         return paragraphText.textContent = `Draw! Both selected ${computerSelection}.`;
     } else if (playerSelection === "paper") {
-        switch (computerSelection) {
-            case "rock":
-                return win(playerSelection, computerSelection);
-            case "scissors":
-                return lose(playerSelection, computerSelection);
-        }
+        computerSelection === "rock" ? win(playerSelection, computerSelection) : lose(playerSelection, computerSelection);
     } else if (playerSelection === "scissors") {
-        switch (computerSelection) {
-            case "rock":
-                return lose(playerSelection, computerSelection);
-            case "paper":
-                return win(playerSelection, computerSelection);
-        }
+        computerSelection === "rock" ? lose(playerSelection, computerSelection) : win(playerSelection, computerSelection);
     } else if (playerSelection === "rock") {
-        switch (computerSelection) {
-            case "paper":
-                return win(playerSelection, computerSelection);
-            case "scissors":
-                return lose(playerSelection, computerSelection);
-        }
+        computerSelection === "paper" ? win(playerSelection, computerSelection) : lose(playerSelection, computerSelection);
     }
 }
 
