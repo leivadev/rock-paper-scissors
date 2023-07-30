@@ -21,24 +21,42 @@ const win = function (playerSelection, computerSelection) {
     playerPoints++;
     userScore.innerHTML = playerPoints;
     computerScore.innerHTML = computerPoints;
-    return paragraphText.textContent = `You win! ${playerSelection} beats ${computerSelection}`
+    playerResult.classList.add("win")
+    playerResult.classList.remove("lose")
+    computerResult.classList.remove("win")
+    computerResult.classList.add("lose")
+    paragraphText.style.color = "#D4AF37"
+    paragraphText.textContent = `You win😃! ${playerSelection} beats ${computerSelection}`
 }
 
 const lose = function (playerSelection, computerSelection) {
     computerPoints++;
     userScore.innerHTML = playerPoints;
     computerScore.innerHTML = computerPoints;
-    return paragraphText.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+    playerResult.classList.add("lose")
+    playerResult.classList.remove("win")
+    computerResult.classList.add("win")
+    computerResult.classList.remove("lose")
+    paragraphText.style.color = "#8B0000"
+    paragraphText.textContent = `You lose☹! ${computerSelection} beats ${playerSelection}`;
+}
+
+const draw = function (computerSelection) {
+    paragraphText.style.color = "#505050"
+    playerResult.classList.remove("win", "lose")
+    computerResult.classList.remove("win", "lose")
+    paragraphText.textContent = `Draw😑... Both selected ${computerSelection}.`;
 }
 
 const playRound = function (playerSelection) {
     if (playerPoints === 5 || computerPoints === 5) {
-        return paragraphText.textContent = "Game Over. Reached 5 rounds.";
+        paragraphText.style.color = "#202020"
+        return paragraphText.textContent = `Game Over! ${computerPoints > playerPoints ? "🦾AI" : "💪You"} win in 5 rounds.`;
     }
     let computerSelection = getComputerChoice();
     computerResult.src = document.getElementById(`AI-${computerSelection}`).src
     if (playerSelection === computerSelection) {
-        return paragraphText.textContent = `Draw! Both selected ${computerSelection}.`;
+        return draw(computerSelection);
     } else {
         let choiceComparison = `${playerSelection.charAt(0)}${computerSelection.charAt(0)}`
         if (choiceComparison === 'rs' || choiceComparison === 'sp' || choiceComparison === 'pr') {
@@ -71,6 +89,8 @@ document.querySelector('.again').addEventListener('click', function () {
     computerResult.src = document.getElementById("AI-rock").src
     userScore.innerHTML = playerPoints;
     computerScore.innerHTML = computerPoints;
+    playerResult.classList.remove("win", "lose")
+    computerResult.classList.remove("win", "lose")
     paragraphText.textContent = 'Pick a Choice!';
 });
 
