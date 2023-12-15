@@ -1,6 +1,6 @@
 # rock-paper-scissors
 
-Hello! this is my version of the game **rock, paper, scissors** made with JavaScript _(and hopefully with HTML/CSS)_.
+Hello! this is my version of the game **rock, paper, scissors** made with HTML, CSS and Javascript.
 
 ## Live Preview
 
